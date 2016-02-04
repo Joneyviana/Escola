@@ -23,7 +23,7 @@ class CoursesController < ApplicationController
      render 'new'
    end
   end
-  end
+
   def destroy
    @course = Course.find(params[:id])
    @course.destroy
@@ -36,4 +36,3 @@ class CoursesController < ApplicationController
      params.require(:course).permit(:name, :description,:status)
    end
   end
-end

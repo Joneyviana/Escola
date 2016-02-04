@@ -2,11 +2,11 @@
 
 <h1>Listing students</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Register number</th>
+      <th>Register_number</th>
       <th>Status</th>
       <th colspan="3"></th>
     </tr>
@@ -19,6 +19,7 @@
         <td><%= student.register_number %></td>
         <td><%= student.status %></td>
         <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Registration', "/classrooms/new/"+ student.id.to_s %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

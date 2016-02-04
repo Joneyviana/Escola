@@ -1,0 +1,26 @@
+<%= form_for(@classroom) do |f| %>
+  <% if @classroom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@classroom.errors.count, "error") %> prohibited this classroom from being saved:</h2>
+
+      <ul>
+      <% @classroom.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+   <%= f.label :Data %><br>
+   <%= f.datetime_select :entry_at, :ampm => true, :start_minute => [0,15,30,45] %>
+ </div>
+  <div class="field">
+   <%= f.label :course %><br>
+   <%= f.collection_select( :course_id, @courses, :id, :name, {:multiple => true}) %>
+    <%= hidden_field_tag "classroom[student_id]", @student.id %>
+  </div>
+  <p></p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
