@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get "/classrooms", to:  "classrooms#index"
   get "/classrooms/new/:id", to:  "classrooms#new"
   post "/classrooms" , to:  "classrooms#create"
-  root to: 'pages#about'
+  root to: 'students#index'
 end
