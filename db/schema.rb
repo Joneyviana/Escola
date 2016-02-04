@@ -20,11 +20,11 @@ ActiveRecord::Schema.define(version: 20160204000146) do
     t.datetime "entry_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "course_id"
+    t.integer  "student_id"
     t.integer  "course_id"
   end
 
-  add_index "classrooms", ["course_id"], name: "index_classrooms_on_course_id", using: :btree
+  add_index "classrooms", ["student_id"], name: "index_classrooms_on_student_id", using: :btree
   add_index "classrooms", ["course_id"], name: "index_classrooms_on_course_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160204000146) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "courses", force: :cascade do |t|
+  create_table "students", force: :cascade do |t|
     t.string   "name"
     t.string   "register_number"
     t.integer  "status"

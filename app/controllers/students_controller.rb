@@ -1,38 +1,38 @@
-class coursesController < ApplicationController
+class StudentsController < ApplicationController
    def index
-     @courses = course.all
+     @students = Student.all
    end
 
    def show
-     @course = course.find(params[:id])
+     @student = Student.find(params[:id])
    end
 
    def new
-     @course = course.new
+     @student = Student.new
    end
 
    def edit
-     @course = course.find(params[:id])
+     @student = Student.find(params[:id])
    end
 
    def create
-    @course = course.new(course_params)
-    if @course.save
-      redirect_to @course
+    @student = Student.new(student_params)
+    if @student.save
+      redirect_to @student
     else
       render 'new'
     end
   end
-end
-def destroy
-    @course = course.find(params[:id])
-    @course.destroy
 
-    redirect_to courses_path
+def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+
+    redirect_to students_path
   end
 
   private
-    def course_params
-      params.require(:course).permit(:name, :register_number,:status)
+    def student_params
+      params.require(:student).permit(:name, :register_number,:status)
     end
 end

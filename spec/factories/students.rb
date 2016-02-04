@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :course do
+  factory :student do
     name "MyString"
     register_number "MyString"
     status ""
