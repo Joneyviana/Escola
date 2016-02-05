@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 20160204000146) do
     t.datetime "entry_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "student_id"
     t.integer  "course_id"
+    t.integer  "student_id"
   end
 
-  add_index "classrooms", ["student_id"], name: "index_classrooms_on_student_id", using: :btree
   add_index "classrooms", ["course_id"], name: "index_classrooms_on_course_id", using: :btree
+  add_index "classrooms", ["student_id"], name: "index_classrooms_on_student_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
@@ -44,5 +44,5 @@ ActiveRecord::Schema.define(version: 20160204000146) do
   end
 
   add_foreign_key "classrooms", "courses"
-  add_foreign_key "classrooms", "courses"
+  add_foreign_key "classrooms", "students"
 end

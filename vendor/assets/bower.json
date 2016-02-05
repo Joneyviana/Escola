@@ -1,0 +1,21 @@
+{
+  "name": "Escola",
+  "homepage": "https://github.com/Joneyviana/Escola",
+  "authors": [
+    "Joneyviana <arcistiel@gmail.com>"
+  ],
+  "description": "Sistema Academico",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.0.3"
+  }
+}

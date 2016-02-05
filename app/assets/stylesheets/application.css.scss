@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'mixins';
+@import 'reset';
+@import 'bower_component_name/stylesheet'
+
