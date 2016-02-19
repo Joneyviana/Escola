@@ -1,22 +1,22 @@
 class StudentsController < ApplicationController
-   def index
-     @students = Student.all
+  def index
+    @students = Student.all
    end
 
-   def show
-     @student = Student.find(params[:id])
+  def show
+    @student = Student.find(params[:id])
    end
 
-   def new
-     @student = Student.new
+  def new
+    @student = Student.new
    end
 
-   def edit
-     @student = Student.find(params[:id])
+  def edit
+    @student = Student.find(params[:id])
    end
 
-   
-   def create
+
+  def create
     @student = Student.new(student_params)
     if @student.save
       redirect_to @student
@@ -25,7 +25,16 @@ class StudentsController < ApplicationController
     end
   end
 
-def destroy
+  def check_register_number
+    @register_number = params[:register_number]
+    @student = Student.where(register_number:@register_number).first
+    respond_to do |format|
+    format.json {
+        render json: {:student => @student}
+     }
+     end
+  end
+  def destroy
     @student = Student.find(params[:id])
     @student.destroy
 
@@ -38,12 +47,12 @@ def destroy
   if @student.update(student_params)
     redirect_to @student
   else
-    render 'edit'
+    redirect_to back
   end
 end
 
   private
     def student_params
-      params.require(:student).permit(:name, :register_number,:status)
+      params.require(:student).permit(:name, :register_number,:status,:image)
     end
 end
