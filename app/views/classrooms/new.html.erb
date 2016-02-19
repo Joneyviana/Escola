@@ -1,4 +1,6 @@
-<%= form_for(@classroom) do |f| %>
+<h1><%=@student.name %> </h1>
+<%= image_tag attachment_url(@student, :image, :fill, 200, 200, format: "jpg") %>
+<%= form_for(@classroom , url:student_classrooms_path(@student),html:{class:"form"}) do |f| %>
   <% if @classroom.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@classroom.errors.count, "error") %> prohibited this classroom from being saved:</h2>
@@ -8,19 +10,25 @@
         <li><%= message %></li>
       <% end %>
       </ul>
+
     </div>
   <% end %>
-  <div class="field">
-   <%= f.label :Data %><br>
-   <%= f.datetime_select :entry_at, :ampm => true, :start_minute => [0,15,30,45] %>
- </div>
-  <div class="field">
+   <h2>Associar a Curso </h2>
+
+
+
+
+ </div >
+  <div class ="field">
    <%= f.label :course %><br>
-   <%= f.collection_select( :course_id, @courses, :id, :name, {:multiple => true}) %>
-    <%= hidden_field_tag "classroom[student_id]", @student.id %>
-  </div>
+   <%= f.collection_select :course_id, @courses, :id, :name, {:multiple => true}, class:"form-control" %>
+ </div>
+  <div class ="field">
+  <%= f.label :Data %><br>
+  <%= f.text_field :entry_at, class:"form-control" , id:"datetime"%>
+</div>
   <p></p>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "submit", value:"matricular" %>
   </div>
 <% end %>
