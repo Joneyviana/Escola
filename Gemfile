@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'simple_form'
 group :development, :test do
   gem 'byebug'
 end
@@ -18,6 +19,8 @@ gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'pg'
 gem 'therubyracer', :platform=>:ruby
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
