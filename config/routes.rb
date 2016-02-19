@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :students
+  resources :students do
+      post 'check_register_number', on: :collection
+      resource :classrooms , only:[:new,:create]
+
+  end
   resources :courses
-  get "/classrooms", to:  "classrooms#index"
-  get "/classrooms/new/:id", to:  "classrooms#new"
-  post "/classrooms" , to:  "classrooms#create"
+
   root to: 'students#index'
+
+
 end
