@@ -10,11 +10,71 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+
+ *= require bootstrap-datetimepicker
+*= require jquery-ui/themes/smoothness/jquery-ui
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+.field {
+  @extend .col-md-6;
+  margin-right: 30px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 
-@import 'mixins';
-@import 'reset';
-@import 'bower_component_name/stylesheet'
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+}
+input[type="file"] {
+    position: absolute;
+    width: 70px;
+    height: 30px;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 4px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
 
+.actions {
+  margin-left: 35px;
+
+}
+input[type="text"] {
+  width:220px;
+}
+
+input[type="submit"] {
+  width:200px;
+}
+.border {
+  border-width:1px;
+  border-color: #d3d3d3;
+  border-style: solid;
+}
+ .form {
+
+     @extend .col-md-5;
+     @extend .border;
+     background-color: white;
+     padding-bottom: 20px;
+     padding-top: 10px;
+   }
+
+   .error_validation {
+    color:#FF0000;
+  }
+  .sucess_validation {
+    color:#00CC00; /* green */
+}
