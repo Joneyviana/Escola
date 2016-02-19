@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bower_component_name/js_file
-//= require turbolinks
+//= require jquery-validation
+//= require jquery-ui
+
+//= require modulejs
 //= require bootstrap-sprockets
 //= require_tree .
