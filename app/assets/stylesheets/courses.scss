@@ -1,3 +1,24 @@
 // Place all the styles related to the courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
+
+
+.course-title  {
+  @extend .border;
+  background: linear-gradient(#ffffff, darken(#ffffff, 5%));
+  height:35px;
+  margin-bottom: 0px;
+
+}
+
+.course-description {
+  background-color: white;
+  @extend .border;
+  margin-top: 0px;
+  }
+
+  .course-person {
+    display: flex;
+   flex-direction: column;
+ }

@@ -1,0 +1,7 @@
+@import "application";
+
+.person {
+    @extend .border;
+    @extend .col-md-5;
+    background-color: white;
+  }
