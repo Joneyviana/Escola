@@ -12,9 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-validation
 //= require jquery-ui
-
+//= require jquery-validation
+//= require underscore
+//= require json2
+//= require judge
 //= require modulejs
 //= require bootstrap-sprockets
+//= require_tree ./templates
 //= require_tree .

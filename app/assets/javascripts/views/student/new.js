@@ -1,4 +1,3 @@
-
 modulejs.define("students.new", function() {
   $.validator.addMethod("checkRegisterNumber",
      function(value, element) {
@@ -16,19 +15,16 @@ modulejs.define("students.new", function() {
          // return true if username is exist in database
          return result;
      },
-     "This username is already taken! Try another."
+     "This register number is already taken! Try another."
  );
-    $("#student").validate({
-    errorClass: "error_validation",
-       rules: {
+    $("#new_student").validate({
+     rules: {
          'student[name]':"required",
          'student[register_number]': {number: true, minlength: 6,required:true,checkRegisterNumber:true},
          'student[status]': {number:true , required: true}
        }
 
     });
-
-
    $("#student_image").change(function(){
 
       $("#uploadFile").val($(this).val());
