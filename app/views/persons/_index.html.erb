@@ -1,0 +1,17 @@
+<% persons.each do |person| %>
+  <div class="person">
+    <h3><%= link_to person.name, person %></h3>
+    <%= image_tag attachment_url(person, :image, :fill, 200, 200, format: "jpg") %>
+    <div><%= person.register_number %></div>
+    <div><%= person.status %></div>
+    <div><%= link_to 'Register', [:new,person,Classroom.new] %>
+     <%= link_to   [:edit , person] do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+    <% end %>
+
+    <%= link_to person, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <span class="glyphicon glyphicon-remove"></span>
+  <% end %>
+</div>
+  </div>
+<% end %>

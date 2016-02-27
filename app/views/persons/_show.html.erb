@@ -1,0 +1,23 @@
+<%= image_tag attachment_url(person, :image, :fill, 200, 200, format: "jpg") %>
+<p>
+  <strong>Name:</strong>
+  <%= person.name %>
+</p>
+
+<p>
+  <strong>Register number:</strong>
+  <%= person.register_number %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= person.status %>
+</p>
+<p>
+  <strong>Courses:</strong>
+
+   <% person.courses.each do |course| %>
+      </br>
+      <strong><%= link_to "#{course.name}" , course_path(course)  %></strong>
+
+     <% end %>
