@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'simple_form'
+gem 'jade-rails', github: 'hendrauzia/jade-rails', branch: 'rails-4-2-5'
 group :development, :test do
   gem 'byebug'
 end
@@ -21,6 +22,9 @@ gem 'pg'
 gem 'therubyracer', :platform=>:ruby
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
+gem 'ejs'
+gem 'js-routes'
+gem 'judge-simple_form'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
@@ -32,8 +36,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'simplecov', '~> 0.11.2'
 end
-group :production do
+group :production  do
   gem 'rails_12factor'
 end
 group :test do
