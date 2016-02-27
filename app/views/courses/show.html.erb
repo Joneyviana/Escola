@@ -15,5 +15,15 @@
   <%= @course.status %>
 </p>
 
+<div class="course-person">
+   <div class="course-professor">
+      <h3>Professores</h3>
+      <%= render partial: "persons/index",locals: {persons: @course.professors}%>
+   </div>
+   <div class="course-professor">
+      <h3>Students</h3>
+      <%= render partial: "persons/index",locals: {persons: @course.students}%>
+   </div>
+</div>
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

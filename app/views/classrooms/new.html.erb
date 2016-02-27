@@ -1,6 +1,6 @@
-<h1><%=@student.name %> </h1>
-<%= image_tag attachment_url(@student, :image, :fill, 200, 200, format: "jpg") %>
-<%= form_for(@classroom , url:student_classrooms_path(@student),html:{class:"form"}) do |f| %>
+<h1><%=@person.name %> </h1>
+<%= image_tag attachment_url(@person, :image, :fill, 200, 200, format: "jpg") %>
+<%= form_for(@classroom , url:[@person ,@classroom],html:{class:"form"}) do |f| %>
   <% if @classroom.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@classroom.errors.count, "error") %> prohibited this classroom from being saved:</h2>

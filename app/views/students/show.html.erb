@@ -1,25 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
-
-<p>
-  <strong>Register number:</strong>
-  <%= @student.register_number %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @student.status %>
-</p>
-<p>
-  <strong>Courses:</strong>
-   <% @student.courses.each do |course| %>
-      <div><%= course.name %></div>
-      <div><%= course.description %></div>
-     <% end %>
+  <%= render partial: "persons/show",locals: {person: @student}%>
  </p>
-<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Edit', edit_student_path(@student) %>
 <%= link_to 'Back', students_path %>

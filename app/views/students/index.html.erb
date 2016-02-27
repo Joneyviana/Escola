@@ -3,27 +3,7 @@
 <h1>Listing students</h1>
 
 
-
-
-
-    <% @students.each do |student| %>
-      <div class="person">
-        <h3><%= link_to student.name, student %></h3>
-        <%= image_tag attachment_url(student, :image, :fill, 200, 200, format: "jpg") %>
-        <div><%= student.register_number %></div>
-        <div><%= student.status %></div>
-        <div><%= link_to 'Register', new_student_classrooms_path(student) %>
-        <%= link_to  edit_student_path(student) do %>
-          <span class="glyphicon glyphicon-pencil"></span>
-        <% end %>
-
-        <%= link_to  student, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <span class="glyphicon glyphicon-remove"></span>
-      <% end %>
-    </div>
-      </div>
-    <% end %>
-
+  <%= render partial: "persons/index",locals: {persons: @students}%>
 
 <br>
 
