@@ -1,11 +1,11 @@
 class CoursesController < ApplicationController
   def index
-    @courses = Course.all
+    @courses = Course.eager_load(:students ,:professors )
   end
 
   def show
     @course = Course.find(params[:id])
-  end
+end
 
   def new
     @course = Course.new
@@ -24,6 +24,25 @@ class CoursesController < ApplicationController
    end
   end
 
+  def update
+  @course = Course.find(params[:id])
+
+  if @course.update(course_params)
+    redirect_to @course
+  else
+    redirect_to back
+  end
+end
+
+  def checkName
+    @name = params[:name]
+    @course = Course.where(name:@name).first
+    respond_to do |format|
+    format.json {
+        render json: {:course => @course}
+     }
+     end
+  end
   def destroy
    @course = Course.find(params[:id])
    @course.destroy
