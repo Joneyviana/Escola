@@ -1,6 +1,6 @@
 class Classroom < ActiveRecord::Base
-  belongs_to :student
+  belongs_to :person , polymorphic: true
   belongs_to :course
-  accepts_nested_attributes_for :student
-  validates_uniqueness_of :student_id , :scope => :course_id
+  accepts_nested_attributes_for :person
+  validates_uniqueness_of :person_id , scope: [:course_id , :person_type]
 end
