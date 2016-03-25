@@ -6,13 +6,13 @@
 
 
     <% @courses.each do |course| %>
-
-        <h3 class="course-title"><%= link_to "#{course.name}" , course_path(course) %></h3>
+      <div class="course" id="<%= course.id %>">
+      <h3 class="course-title"><%= link_to "#{course.name}" , "#" %></h3>
         <div class="course-description"><%= course.description %></div>
-        
-
-
+        <div class="course-person" ></div>
       </div>
+
+
 
         <%= link_to  edit_course_path(course) do %>
           <span class="glyphicon glyphicon-pencil"></span>

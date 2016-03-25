@@ -1,7 +1,24 @@
 @import "application";
 
-.person {
-    @extend .border;
-    @extend .col-md-5;
-    background-color: white;
+
+
+  .person {
+    @extend .container_white ;
+    @extend .text-center;
+    padding-top: 0px;
+    width: 250px;
   }
+  .container-flex-row {
+   display: flex;
+   display: -webkit-flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   -webkit-flex-wrap: wrap;
+   
+   
+  }
+.person-title  {
+  @extend .title;
+  height:35px;
+  margin-top: 0px;
+}

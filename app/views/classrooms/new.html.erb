@@ -1,5 +1,5 @@
 <h1><%=@person.name %> </h1>
-<%= image_tag attachment_url(@person, :image, :fill, 200, 200, format: "jpg") %>
+<%= image_tag attachment_url(@person, :image, :fill, 200, 200, format: "jpg") , class:"img-responsive col-md-4" %>
 <%= form_for(@classroom , url:[@person ,@classroom],html:{class:"form"}) do |f| %>
   <% if @classroom.errors.any? %>
     <div id="error_explanation">

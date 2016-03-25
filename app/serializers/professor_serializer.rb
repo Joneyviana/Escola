@@ -1,0 +1,2 @@
+class ProfessorSerializer < PersonSerializer
+end

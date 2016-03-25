@@ -14,9 +14,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery-validation
-//= require underscore
-//= require json2
-//= require judge
 //= require modulejs
 //= require bootstrap-sprockets
 //= require_tree ./templates

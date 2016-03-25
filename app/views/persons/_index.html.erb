@@ -1,6 +1,7 @@
+<div class="container-flex-row">
 <% persons.each do |person| %>
   <div class="person">
-    <h3><%= link_to person.name, person %></h3>
+    <h3 class="person-title"><%= link_to person.name, person %></h3>
     <%= image_tag attachment_url(person, :image, :fill, 200, 200, format: "jpg") %>
     <div><%= person.register_number %></div>
     <div><%= person.status %></div>
@@ -15,3 +16,4 @@
 </div>
   </div>
 <% end %>
+</div>

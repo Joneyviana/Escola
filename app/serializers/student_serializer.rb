@@ -1,0 +1,3 @@
+class StudentSerializer < PersonSerializer
+
+end

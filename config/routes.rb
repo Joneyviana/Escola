@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   end
   root to: 'students#index'
 
-  mount Judge::Engine => '/judge'
+  
 
 end

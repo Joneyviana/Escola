@@ -3,11 +3,7 @@
 @import "bootstrap";
 
 // make all images responsive by default
-img {
-  @extend .img-responsive;
-  @extend .col-md-4;
-  margin: 0 auto;
- }
+
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
@@ -22,6 +18,8 @@ img {
 
   @extend .text-center;
   }
+
+
 
 .submit {
   @extend .btn;

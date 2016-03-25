@@ -5,11 +5,9 @@
 
 
 .course-title  {
-  @extend .border;
-  background: linear-gradient(#ffffff, darken(#ffffff, 5%));
-  height:35px;
-  margin-bottom: 0px;
-
+  @extend .title;
+  height: 35px;
+  
 }
 
 .course-description {
@@ -17,8 +15,18 @@
   @extend .border;
   margin-top: 0px;
   }
+   .persons-group {
+     @extend .container_white;
+
+
+ }
+ .profile_image {
+    width:100px;
+ }
 
   .course-person {
     display: flex;
    flex-direction: column;
+
+
  }

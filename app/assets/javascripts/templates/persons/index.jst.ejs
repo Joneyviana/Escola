@@ -1,7 +1,17 @@
+<div class="persons-group">
+<h4>Students</h4>
+<% for(var index in students) { %>
 
-<% for(var index in persons) { %>
-<p>Name:</p>
-<p><%= persons[index].name %></p>
-<p><%= persons[index].register_number %></p>
-<%= persons[index].image %>
+<img class="profile_image" src=<%= students[index].image_url %> ></img>
+
 <% }  %>
+</div>
+<div class="persons-group">
+<h4>Professors</h4>
+<% for(var index in professors) { %>
+
+<img class="profile_image" src=<%= professors[index].image_url %> ></img>
+
+<% }  %>
+
+</div>

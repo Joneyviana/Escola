@@ -51,6 +51,11 @@ input[type="file"] {
   margin-left: 35px;
 
 }
+.container_white {
+    @extend .border;
+
+    background-color: white;
+  }
 input[type="text"] {
   width:220px;
 }
@@ -77,4 +82,17 @@ input[type="submit"] {
   }
   .sucess_validation {
     color:#00CC00; /* green */
+}
+
+
+.title  {
+  @extend .border;
+  background: linear-gradient(#009ACD, darken(#009ACD, 10%));
+  
+  
+  
+  a {
+    color:white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
 }
