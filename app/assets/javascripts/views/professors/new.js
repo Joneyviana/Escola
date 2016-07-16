@@ -1,9 +1,9 @@
-modulejs.define("professors.edit", function() {
+modulejs.define("professors.new", function() {
 var person = modulejs.require("person");
-  person.validate(".edit_professor","professor");
+  person.validate(".new_professor","professor");
   
 
   $("#professor_image").change(function(){
     $("#uploadFile").val($(this).val());
-});
+})
 });

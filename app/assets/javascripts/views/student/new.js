@@ -1,30 +1,8 @@
 modulejs.define("students.new", function() {
-  $.validator.addMethod("checkRegisterNumber",
-     function(value, element) {
-         var result = false;
-         $.ajax({
-             type:"POST",
-             async: false,
-             url: "/students/check_register_number", // script to validate in server side
-             data: {register_number: value},
-             success: function(data) {
-
-                 result = (data.student !== null) ? false : true;
-             }
-         });
-         // return true if username is exist in database
-         return result;
-     },
-     "This register number is already taken! Try another."
- );
-    $("#new_student").validate({
-     rules: {
-         'student[name]':"required",
-         'student[register_number]': {number: true, minlength: 6,required:true,checkRegisterNumber:true},
-         'student[status]': {number:true , required: true}
-       }
-
-    });
+  var person = modulejs.require("person");
+  person.validate("#new_student","student");
+  person.validateAjax("/students/check_register_number");
+  
    $("#student_image").change(function(){
 
       $("#uploadFile").val($(this).val());
