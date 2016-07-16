@@ -24,7 +24,7 @@ gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 gem 'ejs'
 gem 'js-routes'
-gem 'judge-simple_form'
+gem 'active_model_serializers', '0.9.3'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
